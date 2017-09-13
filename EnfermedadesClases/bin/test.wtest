@@ -1,0 +1,50 @@
+/*import example.*
+
+describe "Test General" {
+	var malaria500 = new EnfermedadInfecciosa()
+	var otitis100 = new EnfermedadInfecciosa()
+	var lupus10000 = new EnfermedadAutoinmune()
+	var malaria800 = new EnfermedadInfecciosa()
+	var logan = new Persona()
+	var frank = new Persona()
+	
+	fixture{
+		malaria500.celulas(500)
+		otitis100.celulas(100)
+		lupus10000.celulas(10000)
+		malaria800.celulas(800)
+		logan.celulasNuevas(3000000)
+		frank.celulasNuevas(3500000)
+		logan.contraerEnfermedad(malaria500)
+		logan.contraerEnfermedad(otitis100)
+		logan.contraerEnfermedad(lupus10000)
+	}
+	
+	
+	test "frank contrae enfermedad malaria800"{
+	frank.contraerEnfermedad(malaria800)
+	frank.contraerEnfermedad(malaria800)
+	assert.that(frank.tieneEnfermedades().contains(malaria800))
+}
+	test "la malaria de logan se reproduce"{
+		logan.limpiarEnfermedades()
+		logan.contraerEnfermedad(malaria500)
+		malaria500.duplicarse()
+		logan.pasarUnDia()
+		assert.equals(37,logan.temperatura())
+	}
+	test "logan vive un dia"{
+		logan.pasarUnDia()
+		assert.equals(2990000,logan.celulasTiene())
+	}
+	test "logan se queda solo con agresivas"{
+		var celulasAmenaza
+		var enfermedades
+	logan.quedarseAgresivas()
+	enfermedades = logan.tieneEnfermedades
+	celulasAmenaza = enfermedades.fold(0, { acum, enfermedades =>
+     acum + enfermedades.celulas() })
+	}
+	
+}*/
+

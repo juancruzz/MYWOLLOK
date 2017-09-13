@@ -1,0 +1,40 @@
+import personas.*
+import enfermedades.*
+import medicos.*
+
+test "La Malaria se Atenua en 150 celulas"{
+	var malaria = new EnfermedadInfecciosa(500)
+	malaria.atenuarse(10)
+	assert.equals(350,malaria.celulasTiene())
+	}
+	
+test "El Lupus se Atenua en 600 celulas"{
+	var lupus = new EnfermedadAutoinmune(10000, 1)
+	lupus.atenuarse(40)
+	assert.equals(9400,lupus.celulasTiene())
+	}
+	
+test "Cameron atiende a Logan"{
+	var malaria = new EnfermedadInfecciosa(500)
+	var otitis = new EnfermedadInfecciosa(150)
+	var lupus = new EnfermedadAutoinmune(10000, 1)
+	var logan = new Persona ([malaria,lupus,otitis], 3000000)
+	var cameron = new Doctor()
+	cameron.suministrarMedicina(10, logan)
+	assert.equals(350,malaria.celulasTiene())
+	assert.equals(0,otitis.celulasTiene())
+	assert.equals(9850,lupus.celulasTiene())
+}
+
+test "House le dice a Cameron que atienda a Logan"{
+	var malaria = new EnfermedadInfecciosa(500)
+	var otitis = new EnfermedadInfecciosa(150)
+	var lupus = new EnfermedadAutoinmune(10000, 1)
+	var logan = new Persona ([malaria,lupus,otitis], 3000000)
+	var cameron = new Doctor()
+	var drHouse = new JefeDeDepartamento()
+	drHouse.atenderPaciente(10, cameron, logan)
+	assert.equals(350,malaria.celulasTiene())
+	assert.equals(0,otitis.celulasTiene())
+	assert.equals(9850,lupus.celulasTiene())
+}		
